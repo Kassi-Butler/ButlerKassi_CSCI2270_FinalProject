@@ -7,6 +7,7 @@ The project functions as a "Lost & Found" database for dogs. If someone has lost
 How To Run:
 
 The interface of the program is all user input. It prints the instructions and the menu on startup and users can enter a listing, search, delete, or edit listings, guided by on-screen text prompts.
+Documentation: https://github.com/Kassi-Butler/ButlerKassi_CSCI2270_FinalProject/blob/master/Documentation.txt
 
 Dependencies:
 
