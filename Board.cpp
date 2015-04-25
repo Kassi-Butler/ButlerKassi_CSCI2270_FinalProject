@@ -10,13 +10,9 @@ using namespace std;
 /*
 Prototype:
 DogTree::DogTree()
-
-Description:
-Constructor
-
+Description:Constructor
 Example:
 DogTree DT;
-
 No pre or post conditions
 */
 DogTree::DogTree(){
@@ -110,7 +106,14 @@ Dog * DogTree::searchDogTree(Dog * node, string name){
 
 /*
 Prototype:
-bool DogTree::findDog(string, bool)
+bool DogTree::findDog(string, bool)Prototype:
+void DogTree::editListing(string)
+Description: Allows user to edit a listing's information (breed or info since name must be the same for sorting purposes)
+Example:
+DogTree DT;
+DT.editListing("Fido")
+Pre-Conditions: Tree must be initialized, searchDogTree and printDogInfo must be functional, and name must be a string
+Post-Conditions: Breed or information strings should be different for the Dog listing with matching name
 Description: Called when the user searches the database for a specific listing. Searches the tree for a dog matching that description (lost for found, found for lost) and, if found, prints the contact information and deletes the listing. Returns true if the listing is found and handled
 Example:
 DogTree DT;
@@ -493,7 +496,7 @@ void DogTree::DeleteAll(Dog *node){
 
 /*
 Prototype:
-void DogTree::~DogTree()
+DogTree::~DogTree()
 Description: Destructor. Called when ending the program, deletes entire tree
 Pre-Conditions: Tree must be initialized, DeleteAll must be functional
 Post-Conditions: Empty tree (no memory) after ending the program
