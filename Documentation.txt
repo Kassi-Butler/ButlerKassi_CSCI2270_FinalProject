@@ -1,0 +1,117 @@
+Project Documentation
+
+DogTree();
+
+Prototype:
+DogTree::DogTree()
+Description:Constructor
+Example:
+DogTree DT;
+No pre or post conditions
+
+virtual ~DogTree();
+
+Prototype:
+DogTree::~DogTree()
+Description: Destructor. Called when ending the program, deletes entire tree
+Pre-Conditions: Tree must be initialized, DeleteAll must be functional
+Post-Conditions: Empty tree (no memory) after ending the program
+
+void printAllListings();
+
+Prototype:
+void DogTree::printAllListings()
+Description: Calls private print function
+Example:
+DogTree DT;
+DT.printAllListings()
+Pre-Conditions: printAllListings(Dog*) must be functional
+Post-Conditions: None
+
+void addListing(std::string name, std::string breed, std::string info, std::string contact, bool lost);
+
+Prototype:
+void DogTree::addListing(string,string,string,string,bool)
+Description: Adds a dog listing to the tree in the correct position
+Example:
+DogTree DT;
+DT.addListing("Fido", "Labrador", "Has a patch of grey fur on his snout", "example@email.com", true)
+Pre-Conditions: Tree must be initialized, name, breed, info, and contact must be strings
+Post-Conditions: There should be one more item in the tree each time it is called
+
+bool findDog(std::string name, bool lost1);
+
+Prototype:
+bool DogTree::findDog(string, bool)
+Description: Called when the user searches the database for a specific listing. Searches the tree for a dog matching that description (lost for found, found for lost) and, if found, prints the contact information and deletes the listing. Returns true if the listing is found and handled
+Example:
+DogTree DT;
+bool found = DT.findDog("Fido", true)
+Pre-Conditions: Tree must be initialized, searchDogTree, printDogInfo, and deleteListing must function properly
+Post-Conditions: If matching listing is found, it is matched and deleted from the tree, else, it returns false
+
+void deleteListing(std::string name, bool in_find);
+
+Prototype:
+void DogTree::deleteListing(string, bool)
+Description: Deletes a listing in appropriate fashion based on where it is called from. If called from found function (deleted after matching), it prints contact info and then deletes. If called from menu (5) it simply deletes and shows a confirmation message
+Example:
+DogTree DT;
+DT.deleteListing("Fido", true)
+Pre-Conditions: Tree must be initialized, in_find must be an indicator of where it is called from (true if called from inside findDog function). And listingCheck and searchDogTree must be functional
+Post-Conditions: Removes specified Dog listing from the tree while maintaining BST properties
+
+void printDogInfo(Dog* node);
+
+Prototype:
+void DogTree::printDogInfo(Dog*)
+Description: Prints information for each listing (hides contact info)
+Example:
+DogTree DT;
+DT.printDogInfo(root)
+Pre-Conditions: Tree must be initialized, node cannot be NULL
+Post-Conditions: None
+
+bool listingCheck(Dog* node);
+
+Prototype:
+bool DogTree::listingCheck(Dog*)
+Description: Checks with the user to see if the dog listing matches what they are looking for. Returns true or false
+Example:
+DogTree DT;
+bool correct = DT.listingCheck(root)
+Pre-Conditions: Tree must be initialized and node cannot be NULL, printDogInfo must be functional
+Post-Conditions: Returns true if user gives "y" response, and false if user gives "n" response
+
+void editListing(std::string name);
+
+Prototype:
+void DogTree::editListing(string)
+Description: Allows user to edit a listing's information (breed or info since name must be the same for sorting purposes)
+Example:
+DogTree DT;
+DT.editListing("Fido")
+Pre-Conditions: Tree must be initialized, searchDogTree and printDogInfo must be functional, and name must be a string
+Post-Conditions: Breed or information strings should be different for the Dog listing with matching name
+
+void help();
+
+Prototype:
+void DogTree::help()
+Description: Prints the instructions when called
+Example:
+DogTree DT;
+DT.help()
+Pre-Conditions: None
+Post-Conditions: None
+
+void printMenu();
+
+Prototype:
+void DogTree::printMenu()
+Description: Prints the menu after each command is executed from FinalProject.cpp
+Example:
+DogTree DT;
+DT.printMenu()
+Pre-Conditions: None
+Post-Conditions: None
