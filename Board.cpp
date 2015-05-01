@@ -199,7 +199,7 @@ void DogTree::editListing(string name){
     string edit;
     //finds dog posting they wish to edit
     Dog* temp = searchDogTree(root, name);
-    if (temp = NULL){
+    if (temp == NULL){
         cout<<"No matching listing"<<endl;
         return;
     }
@@ -296,6 +296,10 @@ Pre-Conditions: Tree must be initialized, node cannot be NULL
 Post-Conditions: None
 */
 void DogTree::printDogInfo(Dog* node){
+    if (node == NULL) {
+        cout << "Error, null pointer passed to printDogInfo()" << endl;
+        return;
+    }
     if(node->lost){
         cout<<"*** Lost Dog ***"<<endl;
     }
